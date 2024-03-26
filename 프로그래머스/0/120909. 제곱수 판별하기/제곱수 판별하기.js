@@ -1,3 +1,16 @@
-function solution(n) {
+function solution(n){
     return n % Math.sqrt(n) === 0 ? 1 :2;
 }
+
+
+
+
+
+
+
+
+
+
+/*function solution(n) {
+    return n % Math.sqrt(n) === 0 ? 1 :2;
+}*/
