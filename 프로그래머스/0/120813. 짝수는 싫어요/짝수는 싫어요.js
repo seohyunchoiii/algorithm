@@ -1,11 +1,22 @@
-function solution(n) {
+function solution(n){
     answer = [];
-    for(var i=0; i<=n; i++){
-        if(i%2 ===1){
-             answer.push(i);
-        }
-    
+    for(i=1; i<=n; i+=2){
+        answer.push(i);
     }
-     
     return answer;
 }
+
+
+
+
+
+
+
+
+
+/*function solution(n){
+    var answer =[];
+    for(var i =1; i<=n; i+=2){
+        answer.push(i);
+    }
+    return answer;*/
