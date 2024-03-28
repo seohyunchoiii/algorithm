@@ -1,6 +1,11 @@
 function solution(n,numlist){
-    return numlist.filter(v=> v%n === 0);
+    return numlist.filter( v => v%n===0);
+
 }
+
+
+
+
 
 
 
