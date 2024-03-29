@@ -1,10 +1,20 @@
-function solution(my_string) {
-   return [...my_string].map(v => {
-       if (v == v.toLowerCase()) {
-           return v.toUpperCase();
-       }
-       else {
-           return v.toLowerCase();
-       }
-   }).join("");
+function solution(my_string){
+    var answer = "";
+    for(let a of my_string){
+        if (a === a.toLowerCase()){
+            answer += a.toUpperCase();
+        }
+        else {
+            answer += a.toLowerCase();
+        }
+    }
+    return answer;
 }
+
+
+
+
+
+
+
+
