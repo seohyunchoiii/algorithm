@@ -1,18 +1,16 @@
 function solution(my_string){
-    var answer = "";
+    var answer ="";
     for(let a of my_string){
         if(a == a.toLowerCase()){
             answer += a.toUpperCase();
         }
-        else
+        else {
             answer += a.toLowerCase();
+        }
     }
     return answer;
 }
-
-
-
-
+    
 
 
 
