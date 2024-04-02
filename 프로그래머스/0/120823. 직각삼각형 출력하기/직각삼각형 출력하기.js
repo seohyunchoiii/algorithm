@@ -12,10 +12,9 @@ rl.on('line', function (line) {
     solution(Number(input[0]));
 });
     function solution(n){
-         for(var i=1; i < n+1; i++){
-        console.log('*'.repeat(i));
-    }
-    
+        for(i=1; i < n+1; i++){
+            console.log('*'.repeat(i));
+        }
     }
    
 
