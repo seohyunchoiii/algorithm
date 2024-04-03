@@ -1,13 +1,12 @@
 function solution(numbers,direction){
-    if(direction === "right"){
+    if(direction == "right") {
         numbers.unshift(numbers.pop());
     }
     else {
         numbers.push(numbers.shift());
     }
-    return numbers;
+     return numbers;   
 }
-
 
 
 
