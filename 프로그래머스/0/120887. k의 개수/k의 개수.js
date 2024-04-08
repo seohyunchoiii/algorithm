@@ -1,8 +1,22 @@
-function solution(i, j, k) {
-    var answer = 0;
-    for( var v=i; v<=j; v++){
-        answer += [...String(v)].filter( v => Number(v) === k).length;
-         
+function solution(i,j,k){
+    var a = '';
+    for(i; i<=j; i++){
+        a += i;
     }
-    return answer;
+   return a.split(k).length-1;
 }
+
+
+
+
+
+
+
+
+// function solution(i, j, k) {
+//     var a = '';
+//     for( i; i<=j; i++){
+//         a += i;
+//     }
+//     return a.split(k).length-1;
+// }
