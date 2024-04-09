@@ -1,5 +1,14 @@
-function solution(array, n) {
-    var number = array.sort().map(v => Math.abs(n-v));
+function solution(array,n){
+    var number = array.sort().map( v=> Math.abs(n-v));
     var index = number.indexOf(Math.min(...number));
     return array[index];
 }
+
+
+
+
+// function solution(array, n) {
+//     var number = array.map(v => Math.abs(n-v));
+//     var index = number.indexOf(Math.min(...number));
+//     return array[index];
+// }
