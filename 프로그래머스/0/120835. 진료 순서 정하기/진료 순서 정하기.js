@@ -1,7 +1,11 @@
 function solution(emergency){
-    var sortt = [...emergency].sort((a,b) => b-a);
-    return emergency.map( v => sortt.indexOf(v)+1);
+    let arr = [...emergency].sort((a,b) => (b-a));
+    return emergency.map( v => arr.indexOf(v)+1);
+    
 }
+
+
+
 
 
 
