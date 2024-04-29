@@ -1,5 +1,5 @@
 function solution(numbers, target) {
-    var answer = 0;
+    let answer = 0;
     dfs(0, 0);
     
     function dfs(index, sum) {
