@@ -1,5 +1,4 @@
 function solution(maps) {
-//     시계방향 탐색
  const dx =[-1,0,1,0];
  const dy =[0,1,0,-1];
  
