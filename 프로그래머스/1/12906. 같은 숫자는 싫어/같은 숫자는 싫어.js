@@ -7,7 +7,6 @@ function solution(arr){
 
 
 
-
 // function solution(arr)
 // {
 //     var answer = [];
