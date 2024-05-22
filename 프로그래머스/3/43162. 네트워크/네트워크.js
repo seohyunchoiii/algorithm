@@ -21,23 +21,22 @@
 //     return network;
 // }
 
-function solution(n, computers){
+function solution(n,computers){
     let answer=0;
-    let visit = new Array(n).fill(false);
+    const visited = Array.from({length:n},() => false);
     
-    function DFS(i){
-        visit[i]=true;
-        for(let j=0; j < computers.length; j++){
-            if((computers[i][j]===1)&&(!visit[j])){
-                DFS(j);
+    function dfs(i){
+        visited[i] = true;
+        for(let j=0;j<computers.length;j++){
+            if(computers[i][j]===1&& !visited[j]){
+                dfs(j)
             }
         }
     }
-    
-    for(let j=0; j<n;j++){
-        if(!visit[j]){
-            answer += 1;
-            DFS(j);
+    for(let j=0;j<computers.length;j++){
+        if(!visited[j]){
+            dfs(j);
+            answer++;
         }
     }
     return answer;
