@@ -5,19 +5,16 @@ function solution(numbers,target){
     function dfs(index,sum){
         if(index===numbers.length){
             if(sum===target){
-                answer++
+                  answer++;
             }
-            return;
+              return;
         }
+        
         dfs(index+1,sum+numbers[index]);
         dfs(index+1,sum-numbers[index]);
     }
     return answer;
-    
 }
-
-
-
 
 
 
