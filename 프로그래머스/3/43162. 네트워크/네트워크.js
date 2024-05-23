@@ -1,39 +1,38 @@
-// function solution(n, computers) {
-//     let network = 0;
-//     const visit = new Array(n).fill(false);
+// function solution(n,computers){
+//     let answer=0;
+//     const visited = Array.from({length:n},() => false);
     
-//     function DFS(v) {
-//       visit[v] = true;
-//       for (let w = 0; w < computers.length; w++) {
-//         if ((computers[v][w] === 1) && (!visit[w])) {
-//           DFS(w);
+//     function dfs(i){
+//         visited[i] = true;
+//         for(let j=0;j<computers.length;j++){
+//             if(computers[i][j]===1&& !visited[j]){
+//                 dfs(j)
+//             }
 //         }
-//       }
 //     }
-    
-//     for(let w = 0; w < n; w++) {
-//       if (!visit[w]) {
-//         network += 1;
-//         DFS(w);
-//       }
+//     for(let j=0;j<computers.length;j++){
+//         if(!visited[j]){
+//             dfs(j);
+//             answer++;
+//         }
 //     }
-    
-//     return network;
+//     return answer;
 // }
 
 function solution(n,computers){
     let answer=0;
-    const visited = Array.from({length:n},() => false);
+    let visited = Array.from({length:n},() => false);
     
     function dfs(i){
-        visited[i] = true;
-        for(let j=0;j<computers.length;j++){
-            if(computers[i][j]===1&& !visited[j]){
-                dfs(j)
+        visited[i]=true;
+        for(let j=0;j<n;j++){
+            if(!visited[j]&&computers[i][j]===1){
+                dfs(j);
             }
         }
     }
-    for(let j=0;j<computers.length;j++){
+    
+    for(let j=0;j<n;j++){
         if(!visited[j]){
             dfs(j);
             answer++;
