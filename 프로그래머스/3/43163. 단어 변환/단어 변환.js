@@ -43,10 +43,12 @@
 
 function solution(begin,target,words){
     let answer=0;
-    let visit=[];
     let q=[];
+    let visit=[];
     
-    if(!words.includes(target)) return 0;
+    if(!words.includes(target)){
+        return 0;
+    }
     q.push([begin,answer]);
     
     while(q.length>0){
@@ -57,18 +59,19 @@ function solution(begin,target,words){
         
         words.forEach(word => {
             let notEqual = 0;
-            if(visit.includes(word)) return;
-            for(let i=0; i<target.length;i++){
-                if(word[i] !== v[i]){
-                    notEqual++;
-                }
+            if(visit.includes(word)){
+                return;
             }
+            for(let i=0;i<target.length;i++){
+            if(v[i]!== word[i]){
+                notEqual++;
+            }
+        }
             if(notEqual===1){
-                    q.push([word,++cnt]);
-                    visit.push(word);
-                }
+                q.push([word,cnt+1]);
+                visit.push(word);
+            }
         });
-        
     }
     return answer;
 }
