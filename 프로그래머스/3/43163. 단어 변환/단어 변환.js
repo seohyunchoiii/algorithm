@@ -52,21 +52,23 @@ function solution(begin,target,words){
     q.push([begin,answer]);
     
     while(q.length>0){
-        let [v,cnt] = q.shift();
+        let [v, cnt] = q.shift();
         if(v===target){
             return cnt;
         }
         
         words.forEach(word => {
-            let notEqual = 0;
+            let notEqual =0;
             if(visit.includes(word)){
                 return;
             }
+            
             for(let i=0;i<target.length;i++){
-            if(v[i]!== word[i]){
+            if(word[i]!==v[i]){
                 notEqual++;
             }
         }
+            
             if(notEqual===1){
                 q.push([word,cnt+1]);
                 visit.push(word);
