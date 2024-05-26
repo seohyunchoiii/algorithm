@@ -23,25 +23,23 @@
 // }
 
 function solution(tickets){
-    let q=[];
-    dfs(tickets,"ICN",["ICN"]);
+    let routes=[];
+    dfs([tickets,"ICN",["ICN"]]);
     
-    function dfs(alltickets,current,route){
-        if(alltickets.length===0){
-            q.push(route);
+    function dfs([allTickets,current,route]){
+        if(allTickets.length===0){
+            return routes.push(route);
         }
         else{
-            alltickets.forEach(([departure,destination],index) => {
+            allTickets.forEach(([departure,destination],index) => {
                 if(current===departure){
-                    let newtickets = alltickets.slice();
-                    newtickets.splice(index,1);
+                    let leftTickets = allTickets.slice();
+                    leftTickets.splice(index,1);
                     
-                    dfs(newtickets,destination,route.concat(destination));
+                    dfs([leftTickets,destination,route.concat(destination)]);
                 }
             });
         }
-    
-        
-}
-    return q.sort()[0];
+    }
+    return routes.sort()[0];
 }
