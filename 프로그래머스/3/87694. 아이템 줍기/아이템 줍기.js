@@ -51,33 +51,31 @@
 // }
 
 function solution(rectangle,characterX,characterY,itemX,itemY){
-    characterX *=2;
-    characterY *=2;
-    itemX *=2;
-    itemY *=2;
-    let doubleRec = rectangle.map(el => el.map(v => v*2));
-    
-    let q=[[characterX,characterY,0]];
+    let answer=0;
     let dir = [[-1,0],[1,0],[0,-1],[0,1]];
+    let doubleRec = rectangle.map(el => el.map(v => v*2));
+    characterX *= 2
+    characterY *= 2
+    itemX *= 2
+    itemY *= 2
+    let q = [[characterX,characterY,0]];
     
-    let visited = Array.from({length:103}, () => Array(103).fill(0));
+    let visited = Array.from({length:103}, ()=>Array(103).fill(0));
     
     doubleRec.forEach(([x1,y1,x2,y2]) => {
-        for(let i = x1; i <= x2; i++){
-            for(let j = y1; j <=y2 ;j++){
+        for(let i=x1;i<=x2;i++){
+            for(let j=y1; j<=y2; j++){
                 if(i===x1||i===x2||j===y1||j===y2){
                     if(visited[i][j]===0){
                         visited[i][j]=1;
                     }
                 }
                 else{
-                        visited[i][j]=2;
-                    }
+                    visited[i][j]=2;
+                }
             }
         }
     });
-    
-    visited[characterX][characterY]=0;
     
     while(q.length>0){
         let [x,y,cnt] = q.shift();
@@ -85,14 +83,16 @@ function solution(rectangle,characterX,characterY,itemX,itemY){
             return cnt/2;
         }
         
-        for(let[r,c] of dir){
+        for(let [r,c] of dir){
             let newX = x + r;
             let newY = y + c;
+            
             if(visited[newX][newY]===1){
                 q.push([newX,newY,cnt+1]);
-                visited[newX][newY]=0;
+                visited[newX][newY] = 0;
             }
         }
     }
-    return 0;
+    
+    return answer;
 }
