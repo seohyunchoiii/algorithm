@@ -1,11 +1,24 @@
-function solution(n, m){
-    var answer = [];
+// function solution(n, m){
+//     var answer = [];
     
+//     const gcf = (a,b) => {
+//         if (b===0) {
+//             return a;
+//         }
+//         return gcf(b, a%b)
+//     }
+//     const lcm = (a,b) => (a*b) / gcf(a,b)
+    
+//     return [gcf(n,m), lcm(n,m)]
+// }
+
+function solution(n,m){
+    var answer = [];
     const gcf = (a,b) => {
-        if (b===0) {
-            return a;
+        if(b===0){
+            return a
         }
-        return gcf(b, a%b)
+        return gcf(b,a%b)
     }
     const lcm = (a,b) => (a*b) / gcf(a,b)
     
