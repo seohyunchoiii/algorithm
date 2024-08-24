@@ -1,22 +1,44 @@
-function solution(s, n) {
-    var answer = '';
-    for(let i=0;i<s.length;i++){
+// function solution(s, n) {
+//     var answer = '';
+//     for(let i=0;i<s.length;i++){
+//         let sASCII = s.charCodeAt(i);
+//         if(sASCII >=65 && sASCII <=90){
+//             sASCII += n;
+//             if(sASCII > 90) {
+//                 sASCII -=26;
+//             }
+//         }
+//         else if(sASCII >=97 && sASCII <=122){
+//             sASCII += n;
+//             if(sASCII > 122) {
+//                 sASCII -=26;
+//             }
+//         }
+//     let sString = String.fromCharCode(sASCII);
+//     answer += sString;
+//     }
+//     return answer;
+// }
+
+function solution(s,n){
+    let answer = '';
+    for(let i=0; i<s.length;i++){
         let sASCII = s.charCodeAt(i);
-        if(sASCII >=65 && sASCII <=90){
+        if(sASCII >=65 && sASCII <= 90){
             sASCII += n;
-            if(sASCII > 90) {
-                sASCII -=26;
+            if(sASCII > 90){
+                sASCII -= 26;
             }
         }
-        else if(sASCII >=97 && sASCII <=122){
+        else if(sASCII>=97 && sASCII <=122){
             sASCII += n;
-            if(sASCII > 122) {
-                sASCII -=26;
+            if(sASCII > 122){
+                sASCII -= 26;
             }
         }
-    let sString = String.fromCharCode(sASCII);
-    answer += sString;
+        sString = String.fromCharCode(sASCII);
+        answer += sString;
     }
+    
     return answer;
 }
-
